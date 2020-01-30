@@ -1,0 +1,13 @@
+{
+  "presets": [
+    [
+      "@tomera/node",
+      {
+        "module": "commonjs",
+        "library": false,
+        "support": "modern",
+        "debug": false
+      }
+    ]
+  ]
+}
