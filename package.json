@@ -2,7 +2,7 @@
   "name": "tomer.link",
   "private": true,
   "author": "Tomer Aberbach <tomeraberbach@gmail.com> (https://tomeraberba.ch)",
-  "description": "A Netlify-based personal URL shortener that generating funny adjective-animal phrases.",
+  "description": "A Netlify-based personal URL shortener that generates funny adjective-animal phrases.",
   "keywords": [
     "netlify",
     "url-shortener",
