@@ -1,3 +1,4 @@
+import clipboard from 'clipboardy'
 import { randomUniquePhrase } from './phrase'
 import {
   insertRule,
@@ -6,6 +7,7 @@ import {
   ruleExists
 } from './redirects'
 import { isSimplePath, isURL } from './validation'
+import * as git from './git'
 import error from './error'
 
 const main = async () => {
@@ -17,7 +19,6 @@ const main = async () => {
 
   if (!isURL(url)) {
     error(`expected a URL, but got '${url}'.`)
-    process.exit(1)
   }
 
   const { rules, extra } = await readRedirects()
@@ -38,10 +39,25 @@ const main = async () => {
     }
   }
 
+  const link = `https://tomer.link${path}`
+  console.log(`Using ${link} -> ${url}.`)
+
+  await git.pull()
+  console.log(`Ran \`git pull\`.`)
+
   const rule = { from: path, to: url }
   insertRule({ rules, rule })
-
   await outputRedirects({ rules, extra })
+  console.log(`Wrote redirect to \`_redirects\` file.`)
+
+  await git.commit(`feat: ${link} -> ${url}`)
+  console.log(`Ran \`git commit\`.`)
+
+  await git.push()
+  console.log(`Ran \`git push\`.`)
+
+  await clipboard.write(link)
+  console.log(`Copied '${link}' to clipboard.`)
 }
 
 const tryMain = async () => {
