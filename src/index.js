@@ -10,7 +10,7 @@ import { isSimplePath, isURL } from './validation'
 import * as git from './git'
 import error from './error'
 
-const main = async () => {
+const input = async() => {
   let [, , url, path] = process.argv.map(arg => arg.trim())
 
   if (url == null) {
@@ -21,7 +21,7 @@ const main = async () => {
     error(`expected a URL, but got '${url}'.`)
   }
 
-  const { rules, extra } = await readRedirects()
+  const { rules } = await readRedirects()
 
   if (path == null) {
     path = `/${await randomUniquePhrase()}`
@@ -39,22 +39,34 @@ const main = async () => {
     }
   }
 
-  const link = `https://tomer.link${path}`
-  console.log(`Using ${link} -> ${url}.`)
+  return { from: path, to: url }
+}
 
+const main = async () => {
+  const rule = await input()
+
+  const link = `https://tomer.link${rule.from}`
+  console.log(`Creating redirect from ${link} to ${rule.to}.`)
+  console.log()
+
+  process.stdout.write(`Running \`git pull\`...`)
   await git.pull()
-  console.log(`Ran \`git pull\`.`)
+  console.log(` Done.`)
 
-  const rule = { from: path, to: url }
+  process.stdout.write(`Writing redirect to  \`_redirects\` file...`)
+  const { rules, extra } = await readRedirects()
   insertRule({ rules, rule })
   await outputRedirects({ rules, extra })
-  console.log(`Wrote redirect to \`_redirects\` file.`)
+  console.log(` Done.`)
 
-  await git.commit(`feat: ${link} -> ${url}`)
-  console.log(`Ran \`git commit\`.`)
+  const message = `feat: ${link} -> ${rule.to}`
+  process.stdout.write(`Running \`git commit -am "${message}"\`...`)
+  await git.commit(message)
+  console.log(` Done.`)
 
+  process.stdout.write(`Running \`git push\`...`)
   await git.push()
-  console.log(`Ran \`git push\`.`)
+  console.log(` Done.`)
 
   await clipboard.write(link)
   console.log(`Copied '${link}' to clipboard.`)
