@@ -10,7 +10,7 @@ import { isSimplePath, isURL } from './validation'
 import * as git from './git'
 import error from './error'
 
-const input = async() => {
+const input = async () => {
   let [, , url, path] = process.argv.map(arg => arg.trim())
 
   if (url == null) {
@@ -60,7 +60,7 @@ const main = async () => {
   console.log(` Done.`)
 
   const message = `feat: ${link} -> ${rule.to}`
-  process.stdout.write(`Running \`git commit -am "${message}"\`...`)
+  process.stdout.write(`Running \`git commit -am '${message}'\`...`)
   await git.commit(message)
   console.log(` Done.`)
 
