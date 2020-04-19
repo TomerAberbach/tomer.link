@@ -1,4 +1,4 @@
-/burg                         http://www.atmos.albany.edu/student/tburg
+/burg/*                http://www.atmos.albany.edu/student/tburg/:splat
 /covid                  http://arctic.som.ou.edu/tburg/products/covid19
 /dotfiles                     https://github.com/TomerAberbach/dotfiles
 /edin                               https://www.linkedin.com/in/tomer-a
