@@ -14,7 +14,7 @@ const input = async () => {
   let [, , url, path] = process.argv.map(arg => arg.trim())
 
   if (url == null) {
-    error(`usage: shorten <url> [path]`)
+    error(`usage: short <url> [path]`)
   }
 
   if (!isURL(url)) {
