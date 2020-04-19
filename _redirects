@@ -1,17 +1,17 @@
 /burg/*                http://www.atmos.albany.edu/student/tburg/:splat
 /covid                  http://arctic.som.ou.edu/tburg/products/covid19
-/dotfiles                     https://github.com/TomerAberbach/dotfiles
-/edin                               https://www.linkedin.com/in/tomer-a
+/dotfiles/*            https://github.com/TomerAberbach/dotfiles/:splat
+/edin/*                      https://www.linkedin.com/in/tomer-a/:splat
 /email  https://mail.google.com/mail?view=cm&to=tomeraberbach@gmail.com
 /finest-cockatoo                                https://thomasjorth.com
-/github                                https://github.com/TomerAberbach
-/npm                               https://www.npmjs.com/~tomeraberbach
+/github/*                       https://github.com/TomerAberbach/:splat
+/npm/*                      https://www.npmjs.com/~tomeraberbach/:splat
 /present-robin                                   https://kentcdodds.com
 /resume                         https://tomeraberba.ch/other/resume.pdf
 /s   https://github.com/TomerAberbach/tomer.link/blob/master/_redirects
-/singal                                     https://singalt16.github.io
-/tcnj-vpn                     https://github.com/TomerAberbach/tcnj-vpn
-/twitter                              https://twitter.com/TomerAberbach
-/weather                      http://www.atmos.albany.edu/student/tburg
+/singal/*                            https://singalt16.github.io/:splat
+/tcnj-vpn/*            https://github.com/TomerAberbach/tcnj-vpn/:splat
+/twitter/*                     https://twitter.com/TomerAberbach/:splat
+/weather/*             http://www.atmos.albany.edu/student/tburg/:splat
 
-/*      https://tomeraberba.ch
+/*      https://tomeraberba.ch/:splat
