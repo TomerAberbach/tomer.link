@@ -14,21 +14,11 @@ You can view my redirects in the [\_redirects file](https://github.com/TomerAber
 
 You can also view the [`short`](https://github.com/TomerAberbach/dotfiles/blob/master/home/tomeraberbach/.config/fish/functions/short.fish) and [`redirects`](https://github.com/TomerAberbach/dotfiles/blob/master/home/tomeraberbach/.config/fish/functions/redirects.fish) fish shell functions that I use to make and edit my redirects, respectively.
 
-## Contributing
+## Related
 
-Pull requests and stars are always welcome. For bugs and feature requests, [please create an issue](https://github.com/TomerAberbach/tomer.link/issues/new).
-
-## Author
-
-**Tomer Aberbach**
-
-- [GitHub](https://github.com/TomerAberbach)
-- [npm](https://www.npmjs.com/~tomeraberbach)
-- [LinkedIn](https://www.linkedin.com/in/tomer-a)
-- [Website](https://tomeraberba.ch)
+- [netlify-shortener](https://github.com/kentcdodds/netlify-shortener)
 
 ## License
 
-Copyright © 2020 [Tomer Aberbach](https://github.com/TomerAberbach)
+[MIT](https://github.com/TomerAberbach/tomer.link/blob/master/license) © [Tomer Aberbach](https://github.com/TomerAberbach)
 
-Released under the [MIT license](https://github.com/TomerAberbach/tomer.link/blob/master/license).
