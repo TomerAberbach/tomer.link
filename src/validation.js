@@ -1,7 +1,11 @@
 import { URL } from 'url'
 
 export const isSimplePath = string => {
-  if (string.lastIndexOf('/') !== 0 || string.indexOf(`*`) !== -1) {
+  if (string.endsWith(`/*`)) {
+    string = string.substring(0, string.length - 2)
+  }
+    
+  if (string.lastIndexOf('/') !== 0) {
     return false
   }
 
@@ -12,7 +16,7 @@ export const isSimplePath = string => {
         field => url[field].length === 0
       ) && url.pathname.length > 1
     )
-  } catch {
+  } catch (e) {
     return false
   }
 }
@@ -21,7 +25,7 @@ export const isURL = string => {
   try {
     new URL(string)
     return true
-  } catch {
+  } catch (e) {
     return false
   }
 }

@@ -5,7 +5,7 @@ import { readRedirects, ruleExists } from '../redirects'
 
 export const randomPhrase = async () => {
   const [adjective, animal] = await Promise.all(
-    [readAdjectives, readAnimals].map(async read => random(await read()))
+    [readAdjectives, readAnimals].map(async (read) => random(await read()))
   )
 
   return `${adjective}-${animal}`
