@@ -11,7 +11,7 @@ devDependencies:
   microbundle: 0.11.0
   prettier: 2.0.5
   rimraf: 3.0.2
-lockfileVersion: 5.1
+lockfileVersion: 5.2
 packages:
   /@babel/code-frame/7.8.3:
     dependencies:
@@ -690,7 +690,7 @@ packages:
     resolution:
       integrity: sha512-4FJkXzKXEDB1snCFZlLP4gpC3JILicCpGbzG9f9G7tGqGCzETQ2hWPrcinA9oU4wtf2biUaEH5065UnMeR33oA==
   /core-js/2.6.11:
-    deprecated: 'core-js@<3 is no longer maintained and not recommended for usage due to the number of issues. Please, upgrade your dependencies to the actual version of core-js@3.'
+    deprecated: core-js@<3 is no longer maintained and not recommended for usage due to the number of issues. Please, upgrade your dependencies to the actual version of core-js@3.
     dev: true
     requiresBuild: true
     resolution:
@@ -1487,7 +1487,7 @@ packages:
       npmlog: 4.1.2
       prebuild-install: 5.3.3
       which-pm-runs: 1.0.0
-    deprecated: 'The zlib module provides APIs for brotli compression/decompression starting with Node.js v10.16.0, please use it over iltorb'
+    deprecated: The zlib module provides APIs for brotli compression/decompression starting with Node.js v10.16.0, please use it over iltorb
     dev: true
     requiresBuild: true
     resolution:
